@@ -7,6 +7,8 @@ from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 import pandas as pd
 
+from src.components.data_transformation import DataTransformation, DataTrasformationConfig
+
 # Create dataclass to create variables for different paths to store data
 @dataclass
 class DataIngestionConfig:
@@ -48,5 +50,7 @@ class DataIngestion:
             raise CustomException(e, sys)
     
 if __name__ == "__main__":
-    obj = DataIngestion()
-    obj.initiate_data_ingestion()
+    data_ingestion = DataIngestion()
+    train, test = data_ingestion.initiate_data_ingestion()
+    transformer = DataTransformation()
+    transformer.initiate_data_transformation(train, test)
