@@ -1,16 +1,22 @@
-from src.components.data_ingestion import DataIngestion
-from src.components.data_transformation import DataTransformation
-from src.components.model_trainer import ModelTrainer
+from src.pipeline.training_pipeline import TrainingPipeline
+from src.pipeline.prediction_pipeline import PredictionPipeline
+import streamlit as st
 
-# Initiate data ingestion
-data_ingestion = DataIngestion()
-train, test = data_ingestion.initiate_data_ingestion()
+# model_trainer = TrainingPipeline()
+# score, model = model_trainer.start_training()
+# print("Best model: ", model)
+# print("Best score: ", score)
 
-# Initiate data transformation
-transformer = DataTransformation()
-train_transformed, test_transformed, _ = transformer.initiate_data_transformation(train, test)
+st.markdown("Students Math score predictor")
 
-# Initiate model training
-model_trainer = ModelTrainer()
-result, model = model_trainer.initiate_model_trainer(train_transformed, test_transformed)
-print(f"Best model {model} performance: ", result)
+# Interface to collect user input
+with st.form("Data Entry form", clear_on_submit=True):
+
+    name = st.text_input("Name: ")
+    age = st.number_input("Age: ")
+    submit = st.form_submit_button("Predict")
+
+if submit:
+    data_dict = {"name": name, "age":age}
+    st.write(data_dict)
+    

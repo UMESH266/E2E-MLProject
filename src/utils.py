@@ -20,6 +20,15 @@ def save_object(file_path, obj):
         raise CustomException(e, sys)
     
 
+def load_object(file_path, obj):
+    try:
+        with open(file_path, 'rb') as file_obj:
+           content = dill.load(file_obj)
+        return content            
+    except Exception as e:
+        raise CustomException(e, sys)
+
+
 def evaluate_model(X_train, y_train, X_test, y_test, models, param):
     """This function evaluates models return model and the r2_score of the model."""
     try:
