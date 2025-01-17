@@ -4,6 +4,7 @@ import sys
 
 import dill
 from sklearn.metrics import r2_score
+from sklearn.model_selection import GridSearchCV
 from src.exception import CustomException
 
 def save_object(file_path, obj):
@@ -19,14 +20,24 @@ def save_object(file_path, obj):
         raise CustomException(e, sys)
     
 
-def evaluate_model(X_train, y_train, X_test, y_test, models):
+def evaluate_model(X_train, y_train, X_test, y_test, models, param):
     """This function evaluates models return model and the r2_score of the model."""
     try:
         report = {}
         for i in range(len(list(models))):
             model = list(models.values())[i] # Extracting model from models dictionary
+            
+            # Hyper parameter tuning
+            para = param[list(models.keys())[i]]
 
+            # Grid search cv fitting
+            gsCV = GridSearchCV(model, param_grid=para, cv=3)
+            
             # Fit model and train model
+            gsCV.fit(X_train, y_train)
+
+            # Getting params
+            model.set_params(**gsCV.best_params_)
             model.fit(X_train, y_train)
 
             # Predictions on test data
