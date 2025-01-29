@@ -3,6 +3,8 @@
 Objective of the project is to show MLOPs techniques and tools required to execute End to End Machine Learning Project using modular coding design.
 Project includes from defining of problem statement to deployement of app on cloud services having separate modules for Data ingestion, Data transformation, Model building, Model evaluation, Training pipeline, and Prediction pipeline.   
 
+Link to web app: [Student's score predictor](https://mathscorepredictor-umesh.streamlit.app/)
+
 ### Problem statement :
 ***
 Prediction of Math score of students based on the input features such as Gender, Race, Parents education, food eating type, test preparations, writing score, and reading scores.  
