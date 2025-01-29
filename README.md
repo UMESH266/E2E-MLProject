@@ -16,6 +16,7 @@ Prediction of Math score of students based on the input features such as Gender,
 ### Elastic Beanstalk deployement
 - Create .ebextensions folder and add python.config file.
 - Rename main.py to application.py or create application.py file
+- Follow EBS deployement strategies as per AWS.
 
 ### Deployement of Streamlit app on EC2 instance
 
