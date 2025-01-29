@@ -52,3 +52,7 @@ if submit:
     
     st.write("Predicted Math score: ")
     st.write(np.round(result, 2))
+
+st.write("Predictor model: ")
+st.write("Model: Linear Regression")
+st.write("R2_score: 0.89")

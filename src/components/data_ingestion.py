@@ -27,7 +27,7 @@ class DataIngestion:
         try:
             logging.info("Data fetching initiated.")
             # Fetch data, split data, store data and return paths to train, test and raw data
-            data = pd.read_csv('notebook\data\stud.csv')
+            data = pd.read_csv(r'D:\ML Projects\E2E-MLProject\notebook\data\stud.csv')
             train, test = train_test_split(data, test_size=0.20, random_state=42)
 
             # Create or find artifact directory

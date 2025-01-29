@@ -46,3 +46,8 @@ class TrainingPipeline:
             return score, model
         except Exception as e:
             raise CustomException(e, sys)
+        
+# if __name__ == "__main__":
+#     trainer = TrainingPipeline()
+#     score, model = trainer.start_training()
+#     print(score, model)
