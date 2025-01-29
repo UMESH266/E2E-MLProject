@@ -1,60 +1,49 @@
-# End to End Machine Learning - Guided by Krish Naik
+# Student's Math score prediction
+
+Objective of the project is to show MLOPs techniques and tools required to execute End to End Machine Learning Project using modular coding design.
+Project includes from defining of problem statement to deployement of app on cloud services having separate modules for Data ingestion, Data transformation, Model building, Model evaluation, Training pipeline, and Prediction pipeline.   
+
+### Problem statement :
+Prediction of Math score of students based on the input features such as Gender, Race, Parents education, food eating type, test preparations, writing score, and reading scores.  
+
+### Tools used:
+1. Git : Version controlling
+2. Github : Code repository
+3. Docker : Code containerization
+4. Streamlit : User interface and deployement (Free source)
+5. AWS EC2 and Elastic Beanstalk : Deployement on cloud services.
 
 ### Elastic Beanstalk deployement
 - Create .ebextensions folder and add python.config file.
 - Rename main.py to application.py or create application.py file
 
-# How to Deploy Streamlit app on EC2 instance
+### Deployement of Streamlit app on EC2 instance
 
-## 1. Login with your AWS console and launch an EC2 instance
+1. Login with your AWS console and launch an EC2 instance
 
-## 2. Run the following commands
+2. Run the following commands
 
-### Note: Do the port mapping to this port:- 8501
+Note: Do the port mapping to this port:- 8501
 
-```bash
-sudo apt update
-```
+* sudo apt update
 
-```bash
-sudo apt-get update
-```
+* sudo apt-get update
 
-```bash
-sudo apt upgrade -y
-```
+* sudo apt upgrade -y
 
-```bash
-sudo apt install git curl unzip tar make sudo vim wget -y
-```
+* sudo apt install git curl unzip tar make sudo vim wget -y
 
-```bash
-sudo apt install git curl unzip tar make sudo vim wget -y
-```
+* sudo apt install git curl unzip tar make sudo vim wget -y
 
-```bash
-git clone "Your-repository"
-```
+* git clone "Your-repository"
 
-```bash
-sudo apt install python3-pip
-```
+* sudo apt install python3-pip
 
-```bash
-pip3 install -r requirements.txt
-```
+* pip3 install -r requirements.txt
 
-```bash
-#Temporary running
-python3 -m streamlit run app.py
-```
+* python3 -m streamlit run app.py (Temporary running)
+* nohup python3 -m streamlit run app.py (Permanent running)
 
-```bash
-#Permanent running
-nohup python3 -m streamlit run app.py
-```
-
-Note: Streamlit runs on this port: 8501
-
-
-
+### Deployemnt of streamlit app on streamlit cloud sevices
+Login with streamlit cloud account, then create app and link github repository with necessary details and deploy.
+Note: requirements.txt file must be updated with the required libraries to run the app
